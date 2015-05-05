@@ -1,0 +1,17 @@
+angular.module('ExamApp').config(function($routeProvider){
+    $routeProvider
+        .when('/course',{
+            templateUrl:'/partials/course/course.html',
+            controller:'courseController',
+            controllerAs:'courseCtrl'
+        })
+        .when('/course/new',{
+            templateUrl:'partials/course/new.html',
+            controller:'newCourseController',
+            controllerAs:'newCourse'
+        })
+        .when('/',{
+            templateUrl:'/partials/about/index.html'
+        })
+        .otherwise({redirectTo:'/'});
+});
