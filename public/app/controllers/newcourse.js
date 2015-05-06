@@ -2,7 +2,15 @@
  * Created by JAYA on 04-05-2015.
  */
 angular.module('ExamApp').controller('newCourseController',function($scope,$http){
-    $scope.Save = function(course){
+
+    $scope.Add = function(course,paper){
+        course.papers.push(paper);
+    };
+
+
+    $scope.Save = function(course,paper){
+
+
         console.log(course);
         $http({
             method:'POST',
@@ -13,6 +21,6 @@ angular.module('ExamApp').controller('newCourseController',function($scope,$http
                 course=[];
             })
 
-    }
+    };
 
 });
